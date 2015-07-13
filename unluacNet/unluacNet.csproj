@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4099FDF-6C1D-420C-8BEA-292B992D6C7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>unluacNet</RootNamespace>
+    <AssemblyName>unluacNet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ByteBuffer.cs" />
+    <Compile Include="decompile\block\AlwaysLoop.cs" />
+    <Compile Include="decompile\block\Block.cs" />
+    <Compile Include="decompile\block\BooleanIndicator.cs" />
+    <Compile Include="decompile\block\Break.cs" />
+    <Compile Include="decompile\block\CompareBlock.cs" />
+    <Compile Include="decompile\block\DoEndBlock.cs" />
+    <Compile Include="decompile\block\ElseEndBlock.cs" />
+    <Compile Include="decompile\block\ForBlock.cs" />
+    <Compile Include="decompile\block\IfThenElseBlock.cs" />
+    <Compile Include="decompile\block\IfThenEndBlock.cs" />
+    <Compile Include="decompile\block\OuterBlock.cs" />
+    <Compile Include="decompile\block\RepeatBlock.cs" />
+    <Compile Include="decompile\block\SetBlock.cs" />
+    <Compile Include="decompile\block\TForBlock.cs" />
+    <Compile Include="decompile\block\WhileBlock.cs" />
+    <Compile Include="decompile\branch\AndBranch.cs" />
+    <Compile Include="decompile\branch\AssignNode.cs" />
+    <Compile Include="decompile\branch\Branch.cs" />
+    <Compile Include="decompile\branch\EQNode.cs" />
+    <Compile Include="decompile\branch\LENode.cs" />
+    <Compile Include="decompile\branch\LTNode.cs" />
+    <Compile Include="decompile\branch\NotBranch.cs" />
+    <Compile Include="decompile\branch\OrBranch.cs" />
+    <Compile Include="decompile\branch\TestNode.cs" />
+    <Compile Include="decompile\branch\TestSetNode.cs" />
+    <Compile Include="decompile\branch\TrueNode.cs" />
+    <Compile Include="decompile\Code.cs" />
+    <Compile Include="decompile\Constant.cs" />
+    <Compile Include="decompile\Declaration.cs" />
+    <Compile Include="decompile\Decompiler.cs" />
+    <Compile Include="decompile\expression\BinaryExpression.cs" />
+    <Compile Include="decompile\expression\ClosureExpression.cs" />
+    <Compile Include="decompile\expression\ConstantExpression.cs" />
+    <Compile Include="decompile\expression\Expression.cs" />
+    <Compile Include="decompile\expression\FunctionCall.cs" />
+    <Compile Include="decompile\expression\GlobalExpression.cs" />
+    <Compile Include="decompile\expression\LocalVariable.cs" />
+    <Compile Include="decompile\expression\TableLiteral.cs" />
+    <Compile Include="decompile\expression\TableReference.cs" />
+    <Compile Include="decompile\expression\UnaryExpression.cs" />
+    <Compile Include="decompile\expression\UpvalueExpression.cs" />
+    <Compile Include="decompile\expression\Vararg.cs" />
+    <Compile Include="decompile\Function.cs" />
+    <Compile Include="decompile\Op.cs" />
+    <Compile Include="decompile\OpcodeFormat.cs" />
+    <Compile Include="decompile\OpcodeMap.cs" />
+    <Compile Include="decompile\operation\CallOperation.cs" />
+    <Compile Include="decompile\operation\GlobalSet.cs" />
+    <Compile Include="decompile\operation\Operation.cs" />
+    <Compile Include="decompile\operation\RegisterSet.cs" />
+    <Compile Include="decompile\operation\ReturnOperation.cs" />
+    <Compile Include="decompile\operation\TableSet.cs" />
+    <Compile Include="decompile\operation\UpvalueSet.cs" />
+    <Compile Include="decompile\Output.cs" />
+    <Compile Include="decompile\OutputProvider.cs" />
+    <Compile Include="decompile\Registers.cs" />
+    <Compile Include="decompile\statement\Assignment.cs" />
+    <Compile Include="decompile\statement\Declare.cs" />
+    <Compile Include="decompile\statement\FunctionCallStatement.cs" />
+    <Compile Include="decompile\statement\Return.cs" />
+    <Compile Include="decompile\statement\Statement.cs" />
+    <Compile Include="decompile\target\GlobalTarget.cs" />
+    <Compile Include="decompile\target\TableTarget.cs" />
+    <Compile Include="decompile\target\Target.cs" />
+    <Compile Include="decompile\target\UpvalueTarget.cs" />
+    <Compile Include="decompile\target\VariableTarget.cs" />
+    <Compile Include="decompile\Upvalues.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="OpClass.cs" />
+    <Compile Include="parse\BHeader.cs" />
+    <Compile Include="parse\BInteger.cs" />
+    <Compile Include="parse\BIntegerType.cs" />
+    <Compile Include="parse\BList.cs" />
+    <Compile Include="parse\BObject.cs" />
+    <Compile Include="parse\BObjectType.cs" />
+    <Compile Include="parse\BSizeT.cs" />
+    <Compile Include="parse\BSizeTType.cs" />
+    <Compile Include="parse\LBoolean.cs" />
+    <Compile Include="parse\LBooleanType.cs" />
+    <Compile Include="parse\LConstantType.cs" />
+    <Compile Include="parse\LFunction.cs" />
+    <Compile Include="parse\LFunctionType.cs" />
+    <Compile Include="parse\LLocal.cs" />
+    <Compile Include="parse\LLocalType.cs" />
+    <Compile Include="parse\LNil.cs" />
+    <Compile Include="parse\LNumber.cs" />
+    <Compile Include="parse\LNumberType.cs" />
+    <Compile Include="parse\LObject.cs" />
+    <Compile Include="parse\LSourceLines.cs" />
+    <Compile Include="parse\LString.cs" />
+    <Compile Include="parse\LStringType.cs" />
+    <Compile Include="parse\LUpvalue.cs" />
+    <Compile Include="parse\LUpvalueType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\Stack.cs" />
+    <Compile Include="Version.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
